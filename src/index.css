@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas: #F8F7F4;
+    --surface: #FFFFFF;
+    --ink: #15172B;
+    --ink-muted: #77758A;
+    --brand: #7357FF;
+    --lime: #D8F36A;
+    --border: #E7E5DF;
+  }
+
+  * {
+    border-color: #E7E5DF;
+  }
+
+  body {
+    background-color: #F8F7F4;
+    color: #15172B;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Linear-style tabular numbers for analytics */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Linear-inspired minimal scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8D5CC;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A19FA8;
+}
+
+/* Restrained input focus style */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #7357FF !important;
+  box-shadow: 0 0 0 2px rgba(115, 87, 255, 0.12) !important;
+}
+
+/* Micro pulse for status pills */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.97); }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 2.4s ease-in-out infinite;
+}
